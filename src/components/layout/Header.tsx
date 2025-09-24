@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 
 export function Header() {
   const location = useLocation()
-  
+
   return (
     <header className="border-b border-gray-700 bg-gray-800/50 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4">
@@ -11,8 +11,14 @@ export function Header() {
           <Link to="/" className="text-xl font-bold text-white">
             Demo App
           </Link>
-          
+
           <div className="flex gap-4">
+            <Button
+              variant={location.pathname === "/" ? "secondary" : "ghost"}
+              asChild
+            >
+              <Link to="/">Home</Link>
+            </Button>
             <Button
               variant={location.pathname === "/" ? "secondary" : "ghost"}
               asChild
